@@ -17,5 +17,5 @@ class Interface:
         
         # Afficher les scores
         font = pygame.font.Font(None, 74)
-        score_text = self.font.render(f"{jeu.score1} -{jeu.score2}", True, (255, 255, 255))
+        score_text = font.render(f"{jeu.score1} - {jeu.score2}", True, (255, 255, 255))
         self.ecran.blit(score_text, (jeu.largeur_ecran // 2 - score_text.get_width() // 2, 50))
