@@ -12,9 +12,9 @@ def main():
     jeu = Jeu()
     interface = Interface(ecran)
     
-    clock = pygame.time.Clock()
-    running = True
-    in_menu = True
+    horloge = pygame.time.Clock() # Horloge pour déterminer les i/s
+    running = True # Boucle principale
+    in_menu = True # Menu principal ou jeu
     
     while running:
         for event in pygame.event.get():
@@ -28,15 +28,16 @@ def main():
                 elif action == "Quitter":
                     running = False
 
+        # Gestion des touches pour les raquettes (J1 et J2)
         if not in_menu:
-            keys = pygame.key.get_pressed()
-            if keys[pygame.K_z]:
+            touche = pygame.key.get_pressed()
+            if touche[pygame.K_z]:
                 jeu.position_j1 -= 5
-            if keys[pygame.K_s]:
+            if touche[pygame.K_s]:
                 jeu.position_j1 += 5
-            if keys[pygame.K_UP]:
+            if touche[pygame.K_UP]:
                 jeu.position_j2 -= 5
-            if keys[pygame.K_DOWN]:
+            if touche[pygame.K_DOWN]:
                 jeu.position_j2 += 5
 
             # Empêcher les raquettes de sortir de l'écran
@@ -49,7 +50,7 @@ def main():
             menu.render()
         
         pygame.display.flip()
-        clock.tick(60)
+        horloge.tick(60) # 60 i/s
     
     pygame.quit()
 

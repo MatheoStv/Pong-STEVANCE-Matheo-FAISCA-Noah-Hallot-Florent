@@ -28,6 +28,7 @@ class Jeu:
                 self.score2 += 1
                 self.reset_balle()
 
+        # Collision avec les bordures pour le score
         if self.position_balle[0] >= self.largeur_ecran - 50 - self.largeur_raquette:
             if self.position_j2 <= self.position_balle[1] <= self.position_j2 + self.hauteur_raquette:
                 self.vitesse_balle[0] = -self.vitesse_balle[0]
