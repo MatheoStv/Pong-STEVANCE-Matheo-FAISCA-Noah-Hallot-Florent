@@ -11,6 +11,14 @@ class Jeu:
         self.largeur_ecran = 800
         self.hauteur_ecran = 600
 
+    def reset(self):
+        self.position_balle = [400, 300]
+        self.vitesse_balle = [4, 4]
+        self.position_j1 = 250
+        self.position_j2 = 250
+        self.score1 = 0
+        self.score2 = 0
+
     def update(self):
         # Mise à jour de la position de la balle
         self.position_balle[0] += self.vitesse_balle[0]

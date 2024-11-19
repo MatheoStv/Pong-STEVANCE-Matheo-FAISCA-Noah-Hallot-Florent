@@ -21,6 +21,10 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
             
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                in_menu = True
+                jeu.reset()
+
             if in_menu:
                 action = menu.handle_event(event)
                 if action == "Jouer":
